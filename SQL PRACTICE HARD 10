@@ -1,0 +1,33 @@
+SELECT province_name
+FROM province_names
+ORDER BY 
+   (CASE WHEN province_name = 'Ontario' THEN 0 ELSE 1 END),
+   province_name
+
+#alternate
+
+SELECT province_name
+FROM province_names
+ORDER BY
+  (not province_name = 'Ontario'),
+  province_name
+
+#alternate
+
+select province_name
+from province_names
+order by
+  province_name = 'Ontario' desc,
+  province_name
+
+#alternate
+
+SELECT province_name
+FROM province_names
+ORDER BY
+  CASE
+    WHEN province_name = 'Ontario' THEN 1
+    ELSE province_name
+  END
+
+
